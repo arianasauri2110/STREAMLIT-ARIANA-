@@ -3,6 +3,7 @@ import streamlit as st
 import plotly.express as px
 
 dfPoliza = pd.read_excel("C:\\Users\\Ariana Sauri\\OneDrive\\Documentos\\PROYECTO HERRAMIENTAS\\Consultapagos.xlsx")
+#dfPoliza = pd.read_excel("C:\\Users\\Ariana Sauri\\OneDrive\\Documentos\\PROYECTO HERRAMIENTAS\\Consultapagos.xlsx")
 dfPoliza.head()
 dfPoliza.columns
 
