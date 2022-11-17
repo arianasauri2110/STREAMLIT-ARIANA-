@@ -8,6 +8,7 @@ dfPoliza.head()
 dfPoliza.columns
 
 # DISTRIBUCIÓN DE SEGUROS Y ASEGURADORAS
+st.title('DISTRIBUCIÓN DE SEGUROS Y ASEGURADORAS')
 df= dfPoliza[["ASEGURADORA","SEGURO","FECHA_INICIO"]]
 df
 dfPoliza["ASEGURADORA"].unique()
@@ -16,6 +17,7 @@ dfPoliza["ASEGURADORA"].value_counts()
 dfPoliza["SEGURO"].value_counts()
 
 #GRAFICO POR TIPO DE SEGURO
+st.title('GRAFICO POR TIPO DE SEGURO')
 dfSeguros= dfPoliza ["SEGURO"].value_counts().to_frame()
 dfSeguros.columns
 dfSeguros
@@ -30,6 +32,7 @@ fig= px.bar(dfSeguros, x="Tipo de seguro", y= "Total", title= "Distribución de 
 st.plotly_chart(fig, use_container_width=True)
 
 #GRAFICA POR ASEGURADORA
+st.title('GRAFICA POR ASEGURADORA')
 dfAseguradora= dfPoliza ["ASEGURADORA"].value_counts().to_frame()
 dfAseguradora.columns
 dfAseguradora
@@ -40,14 +43,17 @@ fig= px.bar(dfAseguradora, x="Aseguradora", y= "Total", title= "Distribución de
 st.plotly_chart(fig, use_container_width=True)
 
 #GRAFICA DE PIE POR TIPOS DE SEGUROS
+st.title('GRAFICA DE PIE POR TIPOS DE SEGUROS')
 fig= px.pie (df, values=df["SEGURO"].value_counts().values, names=df["SEGURO"].value_counts().index)
 st.plotly_chart(fig, use_container_width=True)
 
 #GRAFICA DE PIE POR ASEGURADORAS
+st.title('GRAFICA DE PIE POR ASEGURADORAS')
 fig= px.pie (df,values=df["ASEGURADORA"].value_counts().values, names=df["ASEGURADORA"].value_counts().index)
 st.plotly_chart(fig, use_container_width=True)
 
 #AGRUPACION DE ASEGURADORAS POR TIPO DE SEGURO.
+st.title('GRAFICAS DE ASEGURADORAS POR SEGUROS')
 df.groupby(["ASEGURADORA","SEGURO"]).count()
 df_stack=df.groupby(["ASEGURADORA","SEGURO"]).size().reset_index()
 df_stack.columns
