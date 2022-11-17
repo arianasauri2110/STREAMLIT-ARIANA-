@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st
 import plotly.express as px
 
-dfPoliza = pd.read_excel("C:\\Users\\Ariana Sauri\\OneDrive\\Documentos\\PROYECTO HERRAMIENTAS\\Consultapagos.xlsx")
+dfPoliza = pd.read_excel("https://github.com/arianasauri2110/STREAMLIT-ARIANA-/blob/main/ConsultaPagos.xlsx?raw=true")
 #dfPoliza = pd.read_excel("C:\\Users\\Ariana Sauri\\OneDrive\\Documentos\\PROYECTO HERRAMIENTAS\\Consultapagos.xlsx")
 dfPoliza.head()
 dfPoliza.columns
